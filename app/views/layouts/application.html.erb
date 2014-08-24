@@ -8,19 +8,9 @@
 </head>
 <body>
   
-  <% if signed_in? %>
-    <%= render partial: 'layouts/logged_in_header' %>
-  <% end %>
-
+  <%= render(partial: 'layouts/logged_in_header') if signed_in? %>
   <%= render partial: 'layouts/header' %>
-
-  <% if flash[:errors] %>
-    <ul>
-      <% flash[:errors].each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <%= render(partial: 'layouts/errors') if flash[:errors] %>
 
   <%= yield %>
 

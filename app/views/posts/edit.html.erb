@@ -3,3 +3,9 @@
   <%= render partial: 'posts/fields' %>
   <button>Update</button>
 </form>
+
+<form action='<%= post_url(@post) %>' method='POST'>
+  <input type='hidden' name='_method' value='DELETE'>
+  <%= authenticity_token %>
+  <button>Delete post</button>
+</form>
