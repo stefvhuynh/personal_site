@@ -1,0 +1,5 @@
+<form action='<%= post_url(@post) %>' method='POST'>
+  <input type='hidden' name='_method' value='PATCH'>
+  <%= render partial: 'posts/fields' %>
+  <button>Update</button>
+</form>

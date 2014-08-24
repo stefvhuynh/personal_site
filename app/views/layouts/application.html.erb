@@ -12,6 +12,8 @@
     <%= render partial: 'layouts/logged_in_header' %>
   <% end %>
 
+  <%= render partial: 'layouts/header' %>
+
   <% if flash[:errors] %>
     <ul>
       <% flash[:errors].each do |error| %>

@@ -1,2 +1,8 @@
 <h2><%= @post.title %></h2>
+
+<% if signed_in? %>
+  <a href='<%= edit_post_url(@post) %>'>Edit</a>
+<% end %>
+
 <p><%= @post.body %></p>
+

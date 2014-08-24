@@ -1,0 +1,9 @@
+<%= authenticity_token %>
+
+<label for='post-title'>Title</label>
+<input id='post-title'
+  type='text'
+  name='post[title]'
+  value='<%= @post.title %>'>
+  
+<textarea name='post[body]'><%= @post.body %></textarea>

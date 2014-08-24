@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     
     if @post.update(post_params)
-      # redirect_to ...
+      redirect_to post_url(@post)
     else
       flash.now[:errors] = @post.errors.full_messages
       render :edit
