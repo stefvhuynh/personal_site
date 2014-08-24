@@ -13,3 +13,132 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, section, article, div, 
+h1, h2, h3, h4, h5, p, a, span, big, 
+small, ul, li, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: content-box;
+  background: transparent;
+  color: black;
+  font-weight: normal;
+}
+
+/* General */
+
+body {
+  font-family: lucida grande;
+  background: #fff;
+}
+
+.clear-fix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* Logged-in header */
+
+.logged-in-header {
+  background: #222;
+  padding: 0 15px;
+  opacity: 0.8;
+}
+
+.logged-in-header a,
+.logged-in-header button {
+  color: #fff;
+  display: block;
+  float: right;
+  padding: 5px 10px;
+}
+
+.logged-in-header a:hover,
+.logged-in-header button:hover {
+  cursor: pointer;
+  color: #aaa;
+}
+
+/* Site header */
+
+.site-header {
+  background: #111;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.site-header > nav {
+  width: 894px;
+  margin: auto;
+  border-left: 3px solid #333;
+  border-right: 3px solid #333;
+}
+
+.site-header > nav > .logo {
+  float: left;
+}
+
+.site-header > nav > .logo > a {
+  color: #fff;
+  display: block;
+  padding: 11px;
+  font-size: 20px;
+}
+
+.site-header > nav > ul {
+  float: right;
+}
+
+.site-header > nav > ul > li {
+  float: left;
+}
+
+.site-header > nav > ul > li > a {
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: 15px;
+}
+
+.site-header > nav > ul > li a:hover {
+  color: #aaa;
+}
+
+/* Site main */
+
+.site-main {
+  width: 834px;
+  margin: auto;
+  padding: 30px;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+/* Flashes */
+
+.flash {
+  color: #fff;  
+  padding: 5px;
+}
+
+.flash > li {
+  list-style: disc inside;
+  padding: 0 10px;
+}
+
+.errors-list {
+  background: #f77;
+}
+
+.notices-list {
+  background: #2e4;
+}
+
+
+

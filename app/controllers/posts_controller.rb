@@ -20,6 +20,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     
     if @post.save
+      flash[:notices] = ['Successfully created a new post!']
       redirect_to posts_url
     else
       flash.now[:errors] = @post.errors.full_messages
@@ -36,6 +37,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     
     if @post.update(post_params)
+      flash[:notices] = ["Succesfully updated post (#{@post.title})!"]
       redirect_to post_url(@post)
     else
       flash.now[:errors] = @post.errors.full_messages
