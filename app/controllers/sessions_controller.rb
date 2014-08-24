@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     )
     
     if @user.nil?
-      flash[:errors] = @user.errors.full_messages
+      flash.now[:errors] = @user.errors.full_messages
       render :new
     else
       sign_in!(@user)

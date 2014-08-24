@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all
     render :index
   end
   
@@ -14,12 +15,12 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     
     if @post.save
-      # redirect_to ...
+      redirect_to posts_url
     else
-      flash[:errors] = @post.errors.full_messages
+      flash.now[:errors] = @post.errors.full_messages
       render :new
     end
   end
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       # redirect_to ...
     else
-      flash[:errors] = @post.errors.full_messages
+      flash.now[:errors] = @post.errors.full_messages
       render :edit
     end
   end
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    # redirect_to ...
+    redirect_to posts_url
   end
   
   private
