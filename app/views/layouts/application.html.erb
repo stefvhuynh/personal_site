@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <% if signed_in? %>
+    <%= render partial: 'layouts/logged_in_header' %>
+  <% end %>
 
   <% if flash[:errors] %>
     <ul>

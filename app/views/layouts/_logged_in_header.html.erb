@@ -1,0 +1,6 @@
+<a href='<%= new_post_url %>'>New post</a>
+<form action='<%= session_url %>' method='POST'>
+  <input type='hidden' name='_method' value='DELETE'>
+  <%= authenticity_token %>
+  <button>Log out</button>
+</form>
