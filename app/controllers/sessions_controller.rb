@@ -13,16 +13,16 @@ class SessionsController < ApplicationController
     
     if @user.nil?
       flash[:errors] = @user.errors.full_messages
-      render: new
+      render :new
     else
       sign_in!(@user)
-      # redirect_to ...
+      redirect_to root_url
     end
   end
   
   def destroy
     sign_out!
-    # redirect_to ...
+    redirect_to new_admin_url
   end
   
 end

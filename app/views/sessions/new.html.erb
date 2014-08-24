@@ -1,0 +1,16 @@
+<form action='<%= session_url %>' method='POST'>
+  <%= authenticity_token %>
+  
+  <label for='session-email'>Email</label>
+  <input id='session-email' 
+    type='email' 
+    name='user[email]' 
+    value='<%= @user.email %>'>
+    
+  <label for='session-password'>Password</label>
+  <input id='session-password'
+    type='password'
+    name='user[password]'>
+    
+  <button>Log in</button>
+</form>
