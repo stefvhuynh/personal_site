@@ -11,12 +11,12 @@ class SessionsController < ApplicationController
       params[:user][:password]
     )
     
-    if @user
-      sign_in!(@user)
-      # redirect_to ...
-    else
+    if @user.nil?
       flash[:errors] = @user.errors.full_messages
       render: new
+    else
+      sign_in!(@user)
+      # redirect_to ...
     end
   end
   
