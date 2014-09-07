@@ -1,9 +1,9 @@
-<a href='<%= posts_url %>'>Back</a>
+<a href="<%= posts_url %>">Back</a>
 <h2><%= @post.title %></h2>
 <h5><%= @post.created_at %></h5>
 
 <% if signed_in? %>
-  <a href='<%= edit_post_url(@post) %>'>Edit</a>
+  <a href="<%= edit_post_url(@post) %>">Edit</a>
 <% end %>
 
 <p><%= @post.body %></p>
