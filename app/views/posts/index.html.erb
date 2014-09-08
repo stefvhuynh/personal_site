@@ -1,20 +1,36 @@
 <section class="blog-section">
-  <header>
+  <header class="blog-header">
     <h1>{ Life of Stefan }</h1>
     <hr class="heading-hr">
     <p>Where I blog about code and other things I'm interested in</p>
   </header>
   
-  <ul class="posts-list">
-    <% @posts.each do |post| %>
-      <li class="post-preview">
-        <a href='<%= post_url(post) %>'><h2><%= post.title %></h2></a>
-        <br>
-        <small><%= post.created_at.to_formatted_s(:long_ordinal) %></small>
-        <p><%= post.preview %></p>
-      </li>
-    <% end %>
-  </ul>
+  <main class="blog-main clear-fix">
+    <section class="left-section">
+      <ul class="posts-list">
+        <% @posts.each do |post| %>
+          <li class="post-preview">
+            <a href='<%= post_url(post) %>'><h2><%= post.title %></h2></a>
+            <br>
+            <small><%= post.created_at.to_formatted_s(:long_ordinal) %></small>
+            <p><%= post.preview %></p>
+          </li>
+        <% end %>
+      </ul>
+    
+      <%= paginate @posts, inner_window: 1 %>
+    </section>
   
-  <%= paginate @posts, inner_window: 1 %>
+    <section class="right-section">
+      <h3>Search:</h3>
+      <form action="<%= search_posts_url %>" method="GET">
+        <%= authenticity_token %>
+        <input class="search-bar" 
+          type="search" 
+          name="query" 
+          placeholder="What are you looking for?">
+      </form>
+    </section>
+  </main>
 </section>
+

@@ -26,6 +26,7 @@ ul, li, form, input, textarea, button {
   box-sizing: content-box;
   background: transparent;
   font-weight: normal;
+  outline: none;
 }
 
 // General
@@ -126,9 +127,17 @@ input[type='password'] {
 // Logged-in header 
 
 .logged-in-header {
-  background: #222;
-  padding: 0 15px;
+  background: #111;
   opacity: 0.8;
+  position: fixed;
+  width: 100%;
+  margin-top: 48px;
+  z-index: 100;
+}
+
+.logged-in-header nav {
+  max-width: 900px;
+  margin: auto;
 }
 
 .logged-in-header a,
@@ -136,13 +145,14 @@ input[type='password'] {
   color: #fff;
   display: block;
   float: right;
-  padding: 5px 10px;
+  padding: 5px 15px;
 }
 
 .logged-in-header a:hover,
 .logged-in-header button:hover {
   cursor: pointer;
   color: #aaa;
+  text-decoration: none;
 }
 
 // Site header
@@ -156,7 +166,7 @@ input[type='password'] {
 }
 
 .site-header nav {
-  max-width: 894px;
+  max-width: 900px;
   margin: auto;
 }
 
@@ -368,7 +378,7 @@ input[type='password'] {
   background: #222;
   height: 250px;
   width: 500px;
-  margin-top: -125px;
+  margin-top: -200px;
   margin-left: -250px;
   border: 3px solid #fff;
   border-radius: 10px;
@@ -400,10 +410,6 @@ input[type='password'] {
  
 // Site footer
 
-.site-footer {
-//  margin-top: -600px;
-}
-
 .site-footer img {
   width: 100%;
   z-index: -1;
@@ -413,12 +419,12 @@ input[type='password'] {
 // Flashes
 
 .flash {
-  color: #fff;  
-  padding: 5px;
-  width: 884px;
-  border: 3px solid #000;
-  border-bottom: 0;
+  color: #fff;
+  padding: 10px;
   margin: auto;
+  margin-top: 48px;
+  width: 100%;
+  position: fixed;
 }
 
 .flash > li {

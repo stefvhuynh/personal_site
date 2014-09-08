@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :require_signed_in!, except: [:index, :show]
+  before_filter :require_signed_in!, except: [:index, :show, :search]
   
   def index
     @posts = Post.page(params[:page]).per(5)
@@ -49,6 +49,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url
+  end
+  
+  def search
+    @query = params[:query]
+    @posts = Post.search_title_and_body(@query).page(params[:page]).per(5)
+    render :search
   end
   
   private

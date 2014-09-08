@@ -1,4 +1,13 @@
-<form action="<%= posts_url %>" method="POST">
-  <%= render partial: 'posts/fields' %>
-  <button>Publish</button>
-</form>
+<section class="new-post-section">
+  <header class="section-header">
+    <h1>New Post</h1>
+    <hr class="heading-hr">
+  </header>
+  
+  <main>
+    <form class="post-form" action="<%= posts_url %>" method="POST">
+      <%= render partial: 'posts/fields' %>
+      <button class="wide-button">Publish</button>
+    </form>
+  </main>
+</section>

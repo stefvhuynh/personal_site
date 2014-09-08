@@ -1,9 +1,11 @@
 <header class='logged-in-header clear-fix'>
-  <form action='<%= session_url %>' method='POST'>
-    <input type='hidden' name='_method' value='DELETE'>
-    <%= authenticity_token %>
-    <button>Log out</button>
-  </form>
+  <nav>
+    <form action='<%= session_url %>' method='POST'>
+      <input type='hidden' name='_method' value='DELETE'>
+      <%= authenticity_token %>
+      <button>Log out</button>
+    </form>
   
-  <a href='<%= new_post_url %>'>New post</a>
+    <a href='<%= new_post_url %>'>New post</a>
+  </nav>
 </header>

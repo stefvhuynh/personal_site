@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   include PgSearch
-  pg_search_scope :search_by_text, against: [:title, :body]  
+  pg_search_scope :search_title_and_body, against: [:title, :body]
+  default_scope { order(created_at: :desc) }
   
   belongs_to :user
   has_many :comments
@@ -12,6 +13,10 @@ class Post < ActiveRecord::Base
     <a class='read-more' href='/posts/#{self.id}'>
       Read more
     </a>".html_safe
+  end
+  
+  def display
+    self.body.html_safe
   end
   
 end
