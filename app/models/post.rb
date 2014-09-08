@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   validates :title, :body, :user_id, presence: true
     
   def preview
-    "#{self.body[0..500]} 
+    "#{highlighted_body[0..497]}... 
     <br><br>
     <a class='read-more' href='/posts/#{self.id}'>
       Read more
@@ -16,7 +16,22 @@ class Post < ActiveRecord::Base
   end
   
   def display
-    self.body.html_safe
+    highlighted_body.html_safe
+  end
+  
+  def highlighted_body
+    code_sections = self.body.scan(/(?<=<code>).*(?=<\/code>)/)
+    #
+    # highlighted_code = code_sections.each_with_object([]) do |section, array|
+    #   array << CodeRay.scan(section, :ruby).div(line_numbers: :table)
+    # end
+    #
+    # highlighted_body = self.body.dup
+    # code_sections.each_with_index do |section, index|
+    #   highlighted_body.gsub!(section, highlighted_code[index])
+    # end
+    #
+    # highlighted_body
   end
   
 end

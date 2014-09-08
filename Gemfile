@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'debugger', group: [:development, :test]
 gem 'kaminari'
 gem 'pg_search'
+gem 'coderay'
 
 group :development do
   gem 'binding_of_caller'

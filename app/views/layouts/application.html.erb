@@ -12,7 +12,6 @@
     <%= render partial: 'layouts/logged_in_header' if signed_in? %>
     <%= render partial: 'layouts/header' %>
     <%= render partial: 'layouts/errors' if flash[:errors] %>
-    <%= render partial: 'layouts/notices' if flash[:notices] %>
     <%= yield %>
     <%= render partial: 'layouts/footer' %>
   </main>
