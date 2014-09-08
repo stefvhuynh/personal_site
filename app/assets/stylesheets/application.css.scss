@@ -32,7 +32,11 @@ ul, li, form, input, textarea, button {
 
 body {
   font-family: tahoma, lucida grande, sans-serif;
-  background: #eee;
+  background: #fff;
+}
+
+section {
+  padding: 80px 0;
 }
 
 h1 {
@@ -53,6 +57,23 @@ h4 {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+small {
+  font-size: 12px;
+  color: #777;
+}
+
+a {
+  color: #5C8ACC;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 input[type='text'],
@@ -135,7 +156,7 @@ input[type='password'] {
 }
 
 .site-header nav {
-  width: 894px;
+  max-width: 894px;
   margin: auto;
 }
 
@@ -156,6 +177,10 @@ input[type='password'] {
   display: block;
   text-align: center;
   padding: 15px;
+}
+
+.site-header a:hover {
+  text-decoration: none;
 }
 
 .site-header .logo a {
@@ -190,6 +215,7 @@ input[type='password'] {
   background-position: top center;
   height: 100%;
   text-align: center;
+  padding: 0;
 }
 
 .profile-info {
@@ -229,7 +255,6 @@ input[type='password'] {
 .about-section {
   color: #fff;
   background: #222;
-  padding: 80px 0;
 }
 
 .about-main {
@@ -243,8 +268,8 @@ input[type='password'] {
 // Projects section
 
 .projects-section {
-  background: #fff;
-  padding: 60px 0;
+  background: #105B92;
+  color: #fff;
 }
 
 .projects-list {
@@ -291,6 +316,100 @@ input[type='password'] {
   display: block;
 }
 
+// Contact section
+
+.contact-section {
+  padding-bottom: 0;
+}
+
+.contact-section .heading-hr {
+  margin-bottom: 40px;
+}
+
+.contact-section .icon-bar {
+  margin-top: 30px;
+  width: 510px;
+}
+
+.contact-section .icon-bar a {
+  text-align: center;
+  color: #000;
+  padding: 0 50px;
+}
+
+.contact-section .icon-bar p {
+  margin-top: 5px;
+}
+
+.email-modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 98;
+}
+
+.modal-overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.email-modal .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  background: #222;
+  height: 250px;
+  width: 500px;
+  margin-top: -125px;
+  margin-left: -250px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.email-modal .exit {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+}
+
+.email-modal .exit:hover {
+  cursor: pointer;
+}
+
+.email-modal .content .email-container {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -15px;
+}
+
+.display-off {
+  display: none;
+}
+ 
+// Site footer
+
+.site-footer {
+//  margin-top: -600px;
+}
+
+.site-footer img {
+  width: 100%;
+  z-index: -1;
+  position: relative;
+}
+
 // Flashes
 
 .flash {
@@ -314,6 +433,8 @@ input[type='password'] {
 .notices-list {
   background: #2e4;
 }
+
+
 
 
 

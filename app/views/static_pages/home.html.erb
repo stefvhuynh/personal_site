@@ -112,8 +112,45 @@
   <header class="section-header">
     <h1>Contact</h1>
     <hr class="heading-hr">
+    <h5>Here's how you can get in touch with me.</h5>
   </header>
+  
+  <main class="contact-main">
+    <ul class="icon-bar clear-fix">
+      <li>
+        <a id="email-icon" href="#">
+          <img src="<%= asset_url('email.png') %>">
+          <p>Email</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="<%= asset_url('linkedin2.png') %>">
+          <p>LinkedIn</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="<%= asset_url('twitter2.png') %>">
+          <p>Twitter</p>
+        </a>
+      </li>
+    </ul>
+  </main>
+  
+    <div class="email-modal display-off">
+      <div class="content">
+        <span class="exit close-modal">&times;</span>
+        <div class="email-container">
+          <h5>huynh.stefan@gmail.com</h5>
+        </div>
+      </div>
+  
+      <div class="modal-overlay close-modal"></div>
+    </div>
 </section>
+
+
 
 
 

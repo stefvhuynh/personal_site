@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+  $('#email-icon').on('click', function(event) {
+    event.preventDefault();
+    $('.email-modal').removeClass('display-off');
+  });
+  
+  $('.close-modal').on('click', function(event) {
+    $('.email-modal').addClass('display-off');
+  });
+});

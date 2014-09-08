@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'debugger', group: [:development, :test]
+gem 'kaminari'
+gem 'pg_search'
 
 group :development do
   gem 'binding_of_caller'

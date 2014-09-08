@@ -1,10 +1,20 @@
-<h1>Blog</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <a href='<%= post_url(post) %>'>
-        <%= post.title %>
-      </a>
-    </li>
-  <% end %>
-</ul>
+<section class="blog-section">
+  <header>
+    <h1>{ Life of Stefan }</h1>
+    <hr class="heading-hr">
+    <p>Where I blog about code and other things I'm interested in</p>
+  </header>
+  
+  <ul class="posts-list">
+    <% @posts.each do |post| %>
+      <li class="post-preview">
+        <a href='<%= post_url(post) %>'><h2><%= post.title %></h2></a>
+        <br>
+        <small><%= post.created_at.to_formatted_s(:long_ordinal) %></small>
+        <p><%= post.preview %></p>
+      </li>
+    <% end %>
+  </ul>
+  
+  <%= paginate @posts, inner_window: 1 %>
+</section>

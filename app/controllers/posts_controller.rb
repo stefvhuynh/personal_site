@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_signed_in!, except: [:index, :show]
   
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(5)
     render :index
   end
   
