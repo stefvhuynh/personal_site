@@ -16,6 +16,18 @@
     <%= yield %>
     <%= render partial: 'layouts/footer' %>
   </main>
-
+  
+  <script>
+    $(document).ready(function() {
+      $('#email-icon').on('click', function(event) {
+        event.preventDefault();
+        $('.email-modal').removeClass('display-off');
+      });
+  
+      $('.close-modal').on('click', function(event) {
+        $('.email-modal').addClass('display-off');
+      });
+    });
+  </script>
 </body>
 </html>
