@@ -14,8 +14,8 @@
  *= require_self
  */
 
-html, body, section, article, div, 
-h1, h2, h3, h4, h5, p, a, span, big, small, 
+html, body, section, article, div, blockquote,
+h1, h2, h3, h4, h5, h6, p, a, span, big, small, 
 ul, li, form, input, textarea, button {
   margin: 0;
   padding: 0;
@@ -40,6 +40,11 @@ section {
   padding: 80px 0;
 }
 
+blockquote {
+  padding: 30px;
+  font-style: italic;
+}
+
 h1 {
   font-size: 36px;
   margin: 20px 0;
@@ -62,6 +67,10 @@ h4 {
 
 h5 {
   font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
 }
 
 small {
@@ -121,6 +130,35 @@ input[type='password'] {
 }
 
 .wide-button:active {
+  margin-bottom: -2px;
+}
+
+.dangerous-button {
+  display: block;
+  background: #d44;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 150px;
+  border: 1px solid #b22;
+  border-radius: 5px;
+  box-shadow: 0 2px #888;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.dangerous-button:hover {
+  cursor: pointer;
+  background: #e55;
+}
+
+.dangerous-button:focus {
+  border: 1px solid #fff;
+  box-shadow: none;
+  background: #1F72D8;
+}
+
+.dangerous-button:active {
   margin-bottom: -2px;
 }
 

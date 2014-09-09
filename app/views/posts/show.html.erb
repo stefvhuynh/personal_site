@@ -9,7 +9,7 @@
     <p><%= @post.display %></p>
     <br>
     <% if signed_in? %>
-      <a href="<%= edit_post_url(@post) %>">Edit</a>
+      <a href="<%= edit_post_url(@post) %>">Edit</a><br>
     <% end %>
     <a href="<%= posts_url %>">&laquo; All Posts</a>
   </main>

@@ -7,8 +7,18 @@ class Post < ActiveRecord::Base
   has_many :comments
   validates :title, :body, :user_id, presence: true
     
-  def preview
-    "#{highlighted_body[0..497]}... 
+  def preview    
+    last_char_index = 500
+    
+    if self.body[0...last_char_index].include?('<code>')
+      last_char_index = self.body.index('<code>')
+    end
+    
+    if self.body[0...last_char_index].include?('<blockquote>')
+      last_char_index = self.body.index('<blockquote>')
+    end
+    
+    "#{self.body[0...last_char_index]}... 
     <br><br>
     <a class='read-more' href='/posts/#{self.id}'>
       Read more
@@ -20,18 +30,18 @@ class Post < ActiveRecord::Base
   end
   
   def highlighted_body
-    code_sections = self.body.scan(/(?<=<code>).*(?=<\/code>)/)
-    #
-    # highlighted_code = code_sections.each_with_object([]) do |section, array|
-    #   array << CodeRay.scan(section, :ruby).div(line_numbers: :table)
-    # end
-    #
-    # highlighted_body = self.body.dup
-    # code_sections.each_with_index do |section, index|
-    #   highlighted_body.gsub!(section, highlighted_code[index])
-    # end
-    #
-    # highlighted_body
+    code_sections = self.body.scan(/(?<=<code>)[\s\S.]*?(?=<\/code>)/)
+
+    highlighted_code = code_sections.each_with_object([]) do |section, array|
+      array << CodeRay.scan(section.strip, :ruby).div(line_numbers: :table)
+    end
+
+    highlighted_body = self.body.dup
+    code_sections.each_with_index do |section, index|
+      highlighted_body.gsub!(section, highlighted_code[index])
+    end
+
+    highlighted_body
   end
   
 end

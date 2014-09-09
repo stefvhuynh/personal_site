@@ -1,11 +1,20 @@
-<form action='<%= post_url(@post) %>' method='POST'>
-  <input type='hidden' name='_method' value='PATCH'>
-  <%= render partial: 'posts/fields' %>
-  <button>Update</button>
-</form>
-
-<form action='<%= post_url(@post) %>' method='POST'>
-  <input type='hidden' name='_method' value='DELETE'>
-  <%= authenticity_token %>
-  <button>Delete post</button>
-</form>
+<section class="new-post-section">
+  <header class="section-header">
+    <h1>Edit Post</h1>
+    <hr class="heading-hr">
+  </header>
+  
+  <main>
+    <form class="post-form" action="<%= post_url(@post) %>" method="POST">
+      <input type='hidden' name='_method' value='PATCH'>
+      <%= render partial: 'posts/fields' %>
+      <button class="wide-button">Update</button>
+    </form>
+    
+    <form action='<%= post_url(@post) %>' method='POST'>
+      <input type='hidden' name='_method' value='DELETE'>
+      <%= authenticity_token %>
+      <button class="dangerous-button">Delete post</button>
+    </form>
+  </main>
+</section>
