@@ -257,7 +257,7 @@ input[type='password'] {
 // Intro section
 
 .intro-section {
-  background-image: asset-data-url('background.jpg');
+  background-image: image-url('background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -379,10 +379,16 @@ input[type='password'] {
   width: 510px;
 }
 
-.contact-section .icon-bar a {
+.contact-section .icon-bar a,
+.contact-section #email-icon {
   text-align: center;
   color: #000;
   padding: 0 50px;
+}
+
+.contact-section #email-icon:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .contact-section .icon-bar p {
