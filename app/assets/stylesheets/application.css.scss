@@ -337,11 +337,13 @@ input[type='password'] {
 }
 
 .project a {
-  color: #000;
+  font-weight: bold;
+  color: #73BDFF;
 }
 
 .project img {
   width: 300px;
+  height: 230px;
 }
 
 .project-info-container {
@@ -352,11 +354,10 @@ input[type='password'] {
   background: rgba(0, 0, 0, 0.7);
   color: #fff;
   display: none;
-  
 }
 
 .project-info {
-  padding: 20px;
+  padding: 5px;
   line-height: 1.5;
 }
 
