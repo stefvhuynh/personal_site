@@ -366,8 +366,12 @@ input[type='password'] {
 }
 
 .project-info {
-  padding: 5px;
+  padding: 5px 14px;
   line-height: 1.5;
+}
+
+.project-info p {
+  text-align: justify;
 }
 
 .project:hover .project-info-container {
