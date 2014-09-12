@@ -18,7 +18,9 @@
   </main>
   
   <script>
-    $(document).ready(function() {
+    $(document).ready(function() {      
+      $('.intro-section-content').fadeTo(1000, 1);
+      
       $('#email-icon').on('click', function(event) {
         event.preventDefault();
         $('.email-modal').removeClass('display-off').fadeTo(200, 1);

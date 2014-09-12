@@ -14,6 +14,11 @@
  *= require_self
  */
 
+@-webkit-keyframes animated-background {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
 html, body, section, article, div, blockquote,
 h1, h2, h3, h4, h5, h6, p, a, span, big, small, 
 ul, li, form, input, textarea, button {
@@ -29,7 +34,7 @@ ul, li, form, input, textarea, button {
   outline: none;
 }
 
-// General
+/*// General*/
 
 body {
   font-family: tahoma, lucida grande, sans-serif;
@@ -162,7 +167,7 @@ input[type='password'] {
   margin-bottom: -2px;
 }
 
-// Logged-in header 
+/*// Logged-in header */
 
 .logged-in-header {
   background: #111;
@@ -193,7 +198,7 @@ input[type='password'] {
   text-decoration: none;
 }
 
-// Site header
+/*// Site header*/
 
 .site-header {
   background: #111;
@@ -247,7 +252,7 @@ input[type='password'] {
   color: #aaa;
 }
 
-// Site main
+/*// Site main*/
 
 .site-main {
   position: absolute;
@@ -259,17 +264,23 @@ input[type='password'] {
   text-align: center;
 }
 
-// Intro section
+/*// Intro section*/
 
 .intro-section {
   background-image: image-url('background.jpg');
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-size: cover;
-  background-position: top center;
+  background-position: 0 0;
   height: 100%;
   text-align: center;
   padding: 0;
   color: #fff;
+  
+  -webkit-animation: animated-background 10s linear infinite;
+}
+
+.intro-section-content {
+  opacity: 0;  
 }
 
 .profile-info {
@@ -314,7 +325,7 @@ input[type='password'] {
   height: 70px;
 }
 
-// About section
+/*// About section*/
 
 .about-section {
   color: #fff;
@@ -337,7 +348,7 @@ input[type='password'] {
   color: #73BDFF;
 }
 
-// Projects section
+/*// Projects section*/
 
 .projects-section {
   background: #888;
@@ -408,7 +419,7 @@ input[type='password'] {
   opacity: 1;
 }
 
-// Contact section
+/*// Contact section*/
 
 .contact-section {
   padding-bottom: 0;
@@ -428,11 +439,34 @@ input[type='password'] {
   text-align: center;
   color: #000;
   padding: 0 50px;
+  opacity: 0.6;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
 }
 
-.contact-section #email-icon:hover {
+.contact-section .icon-bar a p,
+.contact-section #email-icon p {
+  opacity: 0.6;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.contact-section #email-icon:hover,
+.contact-section .icon-bar a:hover {
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.contact-section #email-icon:hover p,
+.contact-section .icon-bar a:hover p {
+  opacity: 1;
 }
 
 .contact-section .icon-bar p {
@@ -497,7 +531,7 @@ input[type='password'] {
   display: none;
 }
  
-// Site footer
+/*// Site footer*/
 
 .site-footer img {
   width: 100%;
@@ -505,7 +539,7 @@ input[type='password'] {
   position: relative;
 }
 
-// Flashes
+/*// Flashes*/
 
 .flash {
   color: #fff;
