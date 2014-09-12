@@ -18,7 +18,7 @@
   </main>
   
   <script>
-    $(document).ready(function() {      
+    $(document).ready(function() {
       $('.intro-section-content').fadeTo(1000, 1);
       
       $('#email-icon').on('click', function(event) {
@@ -29,6 +29,25 @@
       $('.close-modal').on('click', function(event) {
         $('.email-modal').fadeTo(200, 0, function() {
           $('.email-modal').addClass('display-off')
+        });
+      });
+      
+      // Code snippt from CSS tricks
+      $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == 
+            this.pathname.replace(/^\//,'') && 
+            location.hostname == this.hostname) {
+              
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 500);
+              return false;
+            }
+          }
         });
       });
     });
