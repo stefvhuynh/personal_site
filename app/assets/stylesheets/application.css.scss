@@ -14,10 +14,15 @@
  *= require_self
  */
 
+// Animations
+
 @-webkit-keyframes animated-background {
-  from { background-position: 0 0; }
-  to { background-position: 100% 0; }
+  0% { background-position: 0 0; }
+  50% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
 }
+
+// Reset
 
 html, body, section, article, div, blockquote,
 h1, h2, h3, h4, h5, h6, p, a, span, big, small, 
@@ -34,7 +39,7 @@ ul, li, form, input, textarea, button {
   outline: none;
 }
 
-/*// General*/
+// General
 
 body {
   font-family: tahoma, lucida grande, sans-serif;
@@ -167,7 +172,7 @@ input[type='password'] {
   margin-bottom: -2px;
 }
 
-/*// Logged-in header */
+// Logged-in header
 
 .logged-in-header {
   background: #111;
@@ -198,7 +203,7 @@ input[type='password'] {
   text-decoration: none;
 }
 
-/*// Site header*/
+// Site header
 
 .site-header {
   background: #111;
@@ -252,7 +257,7 @@ input[type='password'] {
   color: #aaa;
 }
 
-/*// Site main*/
+// Site main
 
 .site-main {
   position: absolute;
@@ -264,19 +269,19 @@ input[type='password'] {
   text-align: center;
 }
 
-/*// Intro section*/
+// Intro section
 
 .intro-section {
   background-image: image-url('background.jpg');
   background-repeat: repeat-x;
-  background-size: cover;
+  background-size: 120% 100%;
   background-position: 0 0;
   height: 100%;
   text-align: center;
   padding: 0;
   color: #fff;
   
-  -webkit-animation: animated-background 10s linear infinite;
+  -webkit-animation: animated-background 25s linear infinite;
 }
 
 .intro-section-content {
@@ -325,7 +330,7 @@ input[type='password'] {
   height: 70px;
 }
 
-/*// About section*/
+// About section
 
 .about-section {
   color: #fff;
@@ -348,7 +353,7 @@ input[type='password'] {
   color: #73BDFF;
 }
 
-/*// Projects section*/
+// Projects section
 
 .projects-section {
   background: #888;
@@ -419,7 +424,7 @@ input[type='password'] {
   opacity: 1;
 }
 
-/*// Contact section*/
+// Contact section
 
 .contact-section {
   padding-bottom: 0;
@@ -531,7 +536,7 @@ input[type='password'] {
   display: none;
 }
  
-/*// Site footer*/
+// Site footer
 
 .site-footer img {
   width: 100%;
@@ -539,7 +544,7 @@ input[type='password'] {
   position: relative;
 }
 
-/*// Flashes*/
+// Flashes
 
 .flash {
   color: #fff;
