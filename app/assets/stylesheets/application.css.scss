@@ -135,12 +135,8 @@ input[type='password'] {
 
 .wide-button:focus {
   border: 1px solid #fff;
-  box-shadow: none;
   background: #1F72D8;
-}
-
-.wide-button:active {
-  margin-bottom: -2px;
+  outline: none;
 }
 
 .dangerous-button {
@@ -160,16 +156,19 @@ input[type='password'] {
 .dangerous-button:hover {
   cursor: pointer;
   background: #e55;
+  outline: none;
 }
 
 .dangerous-button:focus {
   border: 1px solid #fff;
-  box-shadow: none;
   background: #1F72D8;
 }
 
+.wide-button:active,
 .dangerous-button:active {
-  margin-bottom: -2px;
+  position: relative;
+  bottom: -2px;
+  box-shadow: none;
 }
 
 // Logged-in header

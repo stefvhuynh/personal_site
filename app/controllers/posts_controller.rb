@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  require 'statsd'
   before_filter :require_signed_in!, except: [:index, :show, :search]
   
   def index
