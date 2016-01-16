@@ -345,6 +345,19 @@ input[type='password'] {
   .profile-pic, .about-info {
     display: block;
   }
+
+  .profile-pic {
+    margin: auto;
+  }
+
+  .about-info {
+    margin-top: 10px;
+    width: auto;
+    text-align: center;
+    line-height: 1.6;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 
 .about-main a {
