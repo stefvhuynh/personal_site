@@ -275,7 +275,6 @@ input[type='password'] {
 
 .intro-section-content {
   opacity: 0;
-  background: rgba(0, 0, 0, 0.4);
 }
 
 .profile-info {
@@ -322,7 +321,6 @@ input[type='password'] {
 }
 
 .about-main {
-  max-width: 700px;
   margin: 50px auto;
   text-align: center;
   line-height: 2;
@@ -333,12 +331,20 @@ input[type='password'] {
   width: 150px;
   border-radius: 100px;
   display: inline-block;
-  width: 200px;
+  vertical-align: bottom;
 }
 
 .about-info {
   display: inline-block;
   width: 500px;
+  margin-left: 40px;
+  text-align: left;
+}
+
+@media (max-width: 750px) {
+  .profile-pic, .about-info {
+    display: block;
+  }
 }
 
 .about-main a {
