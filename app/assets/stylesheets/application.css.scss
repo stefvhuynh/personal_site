@@ -14,14 +14,6 @@
  *= require_self
  */
 
-// Animations
-
-@-webkit-keyframes animated-background {
-  0% { background-position: 0 0; }
-  50% { background-position: 100% 0; }
-  100% { background-position: 0 0; }
-}
-
 // Reset
 
 html, body, section, article, div, blockquote,
@@ -42,7 +34,7 @@ ul, li, form, input, textarea, button {
 // General
 
 body {
-  font-family: tahoma, lucida grande, sans-serif;
+  font-family: "Raleway", sans-serif;
   background: #fff;
 }
 
@@ -282,20 +274,15 @@ input[type='password'] {
 }
 
 .intro-section-content {
-  opacity: 0;  
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .profile-info {
   padding-top: 100px;
 }
 
-.profile-pic {
-  border: 3px solid #000;
-  width: 150px;
-  border-radius: 100px;
-}
-
-.profile-text {
+..profile-text {
   max-width: 700px;
   margin: auto;
 }
@@ -339,11 +326,19 @@ input[type='password'] {
   margin: 50px auto;
   text-align: center;
   line-height: 2;
-  font-style: italic;
 }
 
-.about-main p {
-  font-style: normal;
+profile-pic {
+  border: 3px solid #000;
+  width: 150px;
+  border-radius: 100px;
+  display: inline-block;
+  width: 200px;
+}
+
+.about-info {
+  display: inline-block;
+  width: 500px;
 }
 
 .about-main a {
