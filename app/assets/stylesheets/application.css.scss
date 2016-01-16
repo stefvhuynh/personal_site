@@ -275,10 +275,12 @@ input[type='password'] {
 
 .intro-section-content {
   opacity: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .profile-info {
-  padding-top: 100px;
+  padding-top: 170px;
 }
 
 .profile-text {
